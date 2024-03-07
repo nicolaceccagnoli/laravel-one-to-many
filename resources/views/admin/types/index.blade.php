@@ -25,8 +25,7 @@
                             {{ $singleType->content }}
                         </p>
 
-                        <a class="show-button align-self-baseline">
-                            {{-- href="{{ route('admin.types.show', ['singleType' => $singleType->slug]) }}" --}}
+                        <a href="{{ route('admin.types.show', ['type' => $singleType->slug]) }}" class="show-button align-self-baseline">
                             Mostra
                         </a>
 
