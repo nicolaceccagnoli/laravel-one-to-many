@@ -33,6 +33,20 @@
                                 {{ $message }}
                             </div>
                         @enderror
+                        <label for="type_id" class="form-label">Tecnologia</label>
+                        <select name="type_id" id="type_id" class="form-select mb-3">
+                            <option
+                                {{ old('type_id', $project->type_id) == null ? 'selected' : '' }} 
+                                value="">
+                                Seleziona una Tecnologia...
+                            </option>
+                            @foreach ($types as $singleType)
+                                <option {{ old('type_id', $project->type_id) == $singleType->id ? 'selected' : '' }} 
+                                value="{{ $singleType->id }}">
+                                    {{ $singleType->title }}
+                                </option>
+                            @endforeach
+                        </select>
 
                         <div>
                             <button type="submit" class="btn btn-success w-100">

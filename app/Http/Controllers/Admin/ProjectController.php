@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Project;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+// Models
+use App\Models\Project;
+use App\Models\Type;
 
 
 // Form Request
@@ -64,10 +67,11 @@ class ProjectController extends Controller
      */
     public function edit(string $slug)
     {
+        $types = Type::all();
 
         $project = Project::where('slug', $slug)->firstOrFail();
 
-        return view('admin.projects.edit', compact('project'));
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
