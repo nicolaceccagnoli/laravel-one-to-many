@@ -14,4 +14,9 @@ class Type extends Model
         'slug'
     ];
 
+    //Stabilisco la relazione con i Projects  
+    public function projects() {
+        return $this->hasMany(Project::class);
+    }
+
 }

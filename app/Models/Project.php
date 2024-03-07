@@ -15,4 +15,8 @@ class Project extends Model
         'content',
         'status'
     ];
+    //Stabilisco la relazione con i Types  
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
 }

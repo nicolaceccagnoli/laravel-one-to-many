@@ -5,8 +5,12 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+// Models
+use App\Models\Type;
+
 // Helpers
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Schema;
 
 
 class TypeSeeder extends Seeder
@@ -30,14 +34,15 @@ class TypeSeeder extends Seeder
             'Laravel'
         ];
 
+
+
         foreach ($allTypes as $singleType) {
 
-            $title = $singleType['title'];
-            $slug = Str::slug($singleType['title']);
+            // $slug = Str::slug($singleType['title']);
 
             $type = Type::create([
-                'title' => $title,
-                'slug'=> $slug
+                'title' => $singleType,
+                'slug'=> str()->slug($singleType)
             ]);
         }
     }

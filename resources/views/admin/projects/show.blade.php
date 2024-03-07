@@ -17,15 +17,23 @@
                     </p>
 
                     <div>
-                        Creato il: 
-                        <span class="text-success">
-                            {{ $project->created_at->format('d/m/Y') }}
-                        </span>
-                        <br>
-                        Alle: 
-                        <span>
-                            {{ $project->created_at->format('H:i')  }}
-                        </span>
+
+                        <a class="mb-3"> 
+                            {{-- href="{{ route(admin.categories.show, ['type' => $project->type->id]) }}" --}}
+                            {{ $project->type->title }}
+                        </a>
+
+                        <p>
+                            Creato il: 
+                            <span class="text-success">
+                                {{ $project->created_at->format('d/m/Y') }}
+                            </span>
+                            <br>
+                            Alle: 
+                            <span>
+                                {{ $project->created_at->format('H:i')  }}
+                            </span>
+                        </p>
                     </div>
 
                     @if ($project['updated_at'] != $project['created_at'])
