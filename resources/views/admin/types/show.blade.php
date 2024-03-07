@@ -37,7 +37,7 @@
 
                             <form
                             onsubmit="return confirm('Sicuro di voler eliminare questo elemento ? ...')"
-                            action="{{ route('admin.types.destroy', ['type' => $type->slug]) }}"
+                            action="{{ route('admin.types.destroy', ['type' => $type->id]) }}"
                             method="POST"
                             class="d-inline-block">
 
