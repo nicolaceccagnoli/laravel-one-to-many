@@ -29,6 +29,29 @@
                             </ul>
 
                         </div>
+                        <div class="edit-buttons-container d-flex flex-column align-items-end">
+                            
+                            <a href="{{ route('admin.types.edit', ['type' => $type->id]) }}" class="edit-button mb-2">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a>
+
+                            <form
+                            onsubmit="return confirm('Sicuro di voler eliminare questo elemento ? ...')"
+                            action="{{ route('admin.types.destroy', ['type' => $type->slug]) }}"
+                            method="POST"
+                            class="d-inline-block">
+
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="erase-button">
+                                <i class="fa-solid fa-eraser"></i>
+                            </button>
+                            
+                            </form>
+
+                        </div>
+
                 </div>
             </div>
         </div>

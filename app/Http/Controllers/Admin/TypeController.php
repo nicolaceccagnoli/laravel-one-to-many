@@ -8,6 +8,14 @@ use App\Http\Controllers\Controller;
 // Models
 use App\Models\Type;
 
+// Form Request
+use App\Http\Requests\EditTypeRequest;
+
+// Helper
+use Illuminate\Support\Str;
+
+
+
 class TypeController extends Controller
 {
     /**
@@ -59,9 +67,19 @@ class TypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Type $type)
+    public function update(EditTypeRequest $request, string $slug)
     {
-        //
+        $validatedTypeRequest = $request->validated();   
+
+        $type = Type::where('slug', $slug)->firstOrFail();
+
+        $validatedTypeRequest['slug'] = Str::slug($validatedTypeRequest['title']);
+
+        $type->update($validatedTypeRequest);
+
+        return redirect()->route('admin.types.show',['type'=>$type->slug]);
+
+
     }
 
     /**

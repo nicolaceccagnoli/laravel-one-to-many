@@ -8,7 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
 
-class StoreProjectRequest extends FormRequest
+class EditTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,21 +26,16 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //Imposto le chiavi che saranno i 'name' degli input del Form
-            // e i value saranno le regole di validazione
-
-            'title' => 'required|max:255',
-            'slug'=> 'nullable|max:255',
-            'content' => 'required|max:1024',
-            'type_id' => 'nullable|exists:types,id',
+            'title' => 'required|max:64',
+            'slug'=> 'nullable|max:64',
         ];
     }
 
     public function messages(): array
     {
         return [
-            'title.required' => 'Inserisci un Titolo per il tuo Progetto',
-            'content.required'=> 'Inserisci una descrizione per il tuo Progetto',
+            'title.required' => 'Inserisci un Titolo per la Tecnologia',
         ];
     }
+
 }
