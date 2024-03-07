@@ -5,12 +5,12 @@
 @section('main-content')
 
 <section id="index-types">
-    {{-- <div id="add">
-        <a href="{{ route('admin.projects.create') }}" class="add-button mb-5">
+    <div id="add">
+        <a href="{{ route('admin.types.create') }}" class="add-button mb-5">
             <span>Aggiungi</span>
             <i class="fa-solid fa-plus"></i>
         </a>
-    </div> --}}
+    </div>
 
     <div class="row">
         @foreach ($types as $singleType)

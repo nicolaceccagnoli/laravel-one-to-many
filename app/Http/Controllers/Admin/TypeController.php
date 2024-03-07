@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Type;
 
 // Form Request
+use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\EditTypeRequest;
 
 // Helper
@@ -33,15 +34,21 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.types.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTypeRequest $request)
     {
-        //
+        $validatedTypeData = $request->validated();   
+
+        $validatedTypeData['slug'] = Str::slug($validatedTypeData['title']);
+
+        $type = Type::create($validatedTypeData);
+
+        return redirect()->route('admin.types.show',['type'=>$type->slug]);
     }
 
     /**
