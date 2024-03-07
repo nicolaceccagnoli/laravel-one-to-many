@@ -13,7 +13,8 @@ class Project extends Model
         'title',
         'slug',
         'content',
-        'status'
+        'status',
+        'type_id',
     ];
     //Stabilisco la relazione con i Types  
     public function type() {

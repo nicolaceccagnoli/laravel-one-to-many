@@ -20,8 +20,7 @@
 
                         <div>
 
-                            <a class="mb-3"> 
-                                {{-- href="{{ route(admin.categories.show, ['type' => $project->type->id]) }}" --}}
+                            <a href="{{ route('admin.types.show', ['type' => $project->type->slug]) }}" class="mb-3"> 
                                 {{ $project->type->title }}
                             </a>
 
