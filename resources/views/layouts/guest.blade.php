@@ -28,6 +28,7 @@
                             <li>
 
                                 <a href="{{ route('projects.index') }}">I nostri progetti</a>
+                                <a href="{{ route('types.index') }}">Le nostre Tecnologie</a>
                                 <a href="{{ route('login') }}">Login</a>
                                 <a href="{{ route('register') }}">Register</a>
 

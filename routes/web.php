@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\Route;
 // Controllers
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TypeController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Admin\Typecontroller as AdminTypeController;
-
 
 
 /*
@@ -31,6 +31,15 @@ Route::prefix('projects')
 
             Route::get('/', [ProjectController::class, 'index'])->name('index');
             Route::get('/{project}', [ProjectController::class, 'show'])->name('show');
+});
+
+// Definisco la rotta per mostrare le tecnologie ai Guest
+Route::prefix('types')
+        ->name('types.')
+        ->group(function () {
+
+        Route::get('/', [TypeController::class, 'index'])->name('index');
+        Route::get('/{type}', [TypeController::class, 'show'])->name('show');
 });
 
 Route::prefix('admin')

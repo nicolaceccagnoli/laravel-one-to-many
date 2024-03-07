@@ -4,7 +4,7 @@
 
 @section('main-content')
 <section id="show-guest">
-    <div class="row">
+    <div class="row g-0">
         <div class="col d-flex justify-content-center">
             <div class="my-card">
                 <div class="my-card-body">
@@ -15,6 +15,12 @@
                     <p class="mb-3">
                         {{ $project->content }}
                     </p>
+
+                    <div class="mb-3">
+                        <a href="{{ route('types.show', ['type' => $project->type->slug]) }}"> 
+                            {{ $project->type->title }}
+                        </a>
+                    </div>
 
                     <div>
                         Creato il: 

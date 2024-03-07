@@ -3,8 +3,8 @@
 @section('main-content')
     <section id="welcome">
         <div class="container">
-            <h1>
-                Benvenuti nel <span>nostro</span> portfolio !
+            <h1 class="text-center">
+                Benvenuti nel <span>mio</span> portfolio !
             </h1>
 
             <div class="frame">

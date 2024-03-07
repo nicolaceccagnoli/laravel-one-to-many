@@ -11,7 +11,7 @@
             </a>
         </div>
 
-        <div class="row">
+        <div class="row g-0">
             @foreach ($projects as $project)
                 <div class="col-12 col-xs-6 col-sm-4 col-md-3 mb-3">
                     <div class="my-card m-1">

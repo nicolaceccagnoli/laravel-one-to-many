@@ -4,7 +4,7 @@
 
 @section('main-content')
     <section id="dashboard">
-        <div class="row">
+        <div class="row g-0">
             <div class="col-12 text-center">
                 
                 @if ($stringaSalutaUtente != null)

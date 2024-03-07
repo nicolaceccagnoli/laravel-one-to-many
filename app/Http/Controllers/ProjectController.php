@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 //Models
 use App\Models\Project;
+use App\Models\Type;
+
 
 use Illuminate\Http\Request;
 
@@ -28,9 +30,12 @@ class ProjectController extends Controller
      */
     public function show(string $slug)
     {
+
+        $types = Type::all();
+
         $project = Project::where('slug', $slug)->firstOrFail();
 
-        return view("projects.show", compact("project"));
+        return view("projects.show", compact("project", 'types'));
     }
 
 }

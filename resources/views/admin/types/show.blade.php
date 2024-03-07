@@ -4,7 +4,7 @@
 
 @section('main-content')
     <section id="type-show">
-        <div class="row">
+        <div class="row g-0">
             <div class="col d-flex justify-content-center">
                 <div class="my-card">
                     <div class="my-card-body">

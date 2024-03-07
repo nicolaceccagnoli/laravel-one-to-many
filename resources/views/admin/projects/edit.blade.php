@@ -3,7 +3,7 @@
 @section('page-title', 'edit progetto')
 
 @section('main-content')
-    <div class="row">
+    <div class="row g-0">
         <div class="col">
             <div class="card">
                 <div class="card-body">
