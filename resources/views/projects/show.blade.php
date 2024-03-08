@@ -12,32 +12,44 @@
                         {{ $project->title }}
                     </h1>
 
-                    <p class="mb-3">
+                    <p class="mb-3">                        
                         {{ $project->content }}
                     </p>
 
-                    <div class="mb-3">
-                        <a href="{{ route('types.show', ['type' => $project->type->slug]) }}"> 
-                            {{ $project->type->title }}
-                        </a>
-                    </div>
+                        <div class="mb-3">
 
-                    <div>
-                        Creato il: 
-                        <span class="text-success">
-                            {{ $project->created_at->format('d/m/Y') }}
-                        </span>
-                        <br>
-                        Alle: 
-                        <span>
-                            {{ $project->created_at->format('H:i')  }}
-                        </span>
-                    </div>
+                            @if ($project->type != null)
+
+                                <span>
+                                    Tecnologia utilizzata:
+                                </span>
+                                <br>
+                                <a href="{{ route('types.show', ['type' => $project->type->slug]) }}"> 
+                                    {{ $project->type->title }}
+                                </a>
+
+                            @else
+                                -
+                            @endif
+    
+                        </div>
+
+                        <div>
+                            Creato il: 
+                            <span class="text-success">
+                                {{ $project->created_at->format('d/m/Y') }}
+                            </span>
+                            <br>
+                            Alle: 
+                            <span>
+                                {{ $project->created_at->format('H:i')  }}
+                            </span>
+                        </div>
 
                     @if ($project['updated_at'] != $project['created_at'])
                         <div>
                             Modificato il: 
-                            <span>
+                            <span class="text-warning">
                                 {{ $project->updated_at->format('d/m/Y') }}
                             </span>
                             <br>

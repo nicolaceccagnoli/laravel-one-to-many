@@ -27,28 +27,6 @@
                             <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="show-button align-self-baseline">
                                 Mostra
                             </a>
-
-                            <div class="edit-buttons-container d-flex flex-column align-items-end">
-                                <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}" class="edit-button mb-2">
-                                    <i class="fa-solid fa-pencil"></i>
-                                </a>
-                                <form
-                                onsubmit="return confirm('Sicuro di voler eliminare questo elemento ? ...')"
-                                action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}"
-                                method="POST"
-                                class="d-inline-block">
-
-                                @csrf
-                                @method('DELETE')
-
-                                <button type="submit" class="erase-button">
-                                    <i class="fa-solid fa-eraser"></i>
-                                </button>
-                                
-                                </form>
-
-                            </div>
-
                         </div>
                     </div>
                 </div>

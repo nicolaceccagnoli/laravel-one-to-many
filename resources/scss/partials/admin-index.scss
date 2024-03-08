@@ -62,38 +62,6 @@
                 transition: background-color 0.5s ;
             }
     
-            .edit-buttons-container {
-                position: absolute;
-                right: -25px;
-                bottom: 25px;
-    
-                .edit-button {
-
-                    background-color: lightgrey;
-                    color: white;
-                    text-decoration: none;
-                    width: 50px;
-                    height: 50px;
-                    text-align: center;
-                    line-height: 50px;
-                    font-size: 24px;
-                    border-radius: 50%;
-                    transition: background-color 0.5s ;
-                    &:hover{
-                        background-color: #ffd908;
-                    }
-                }
-    
-                .erase-button {
-                    
-                    background-color: #b61909;
-                    color: white;
-                    border-width: 0;
-                    height: 50px;
-                    width: 50px;
-                    border-radius: 50%;
-                }
-            }
         }
 
     }
